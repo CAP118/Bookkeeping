@@ -50,8 +50,6 @@ public class Capium_Login_Locators {
 	@CacheLookup
 	public WebElement Homepage_Element;
 
-	
-
 	@FindBy(xpath = "//a/h6[contains(text(),'Bookkeeping')]")
 	@CacheLookup
 	public WebElement Homepage_BK_module;
@@ -67,5 +65,27 @@ public class Capium_Login_Locators {
 	@FindBy(xpath="//a[normalize-space()='Logout']")
 	@CacheLookup
 	public WebElement Logout_inside_logo;
+	
+	@FindBy(xpath="(//a[@aria-haspopup='menu'])[3]")
+	public WebElement FivePointProfileIcon;
+	
+	@FindBy(xpath="//a[normalize-space()='Sign Out']")
+	public WebElement SignoutFivePointZero;
+	
+	
+	@FindBy(xpath = "//h6[text()='365']//parent::a")
+	@CacheLookup
+	public WebElement Capiuum365_Module;
+	
+	@FindBy(xpath="//h6[text()='365']//parent::div")
+	public WebElement InsideCicon5_0_365Module;
+	
+	@FindBy(xpath="//div[normalize-space()='Capium 365']")
+	public WebElement insideCicon3_0_365Module;
+	
+	@FindBy(xpath="//img[@alt='Capium Logo']//parent::div//parent::a")
+	public WebElement CiconFivepoint_o;
+	
+	
  
 }

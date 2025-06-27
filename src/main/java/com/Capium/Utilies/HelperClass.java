@@ -43,7 +43,7 @@ public class HelperClass {
 
 	public static void openPage(String url) {
 		if (driver == null) {
-			setUpDriver(); // Ensure WebDriver is initialized
+			setUpDriver(); 
 		}
 		driver.get(url);
 	}
@@ -120,6 +120,14 @@ public class HelperClass {
 
 	}
 	
+	public static void clickWhenVisibleAndClickable(WebElement element) {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.visibilityOf(element));
+	    wait.until(ExpectedConditions.elementToBeClickable(element));
+	    element.click();
+	}
+
+	
 	public static boolean isElementPresentAndClickable(WebElement element) {
 	    try {
 	        return element != null && element.isDisplayed() && element.isEnabled();
@@ -155,7 +163,7 @@ public class HelperClass {
 		((JavascriptExecutor) driver)
 				.executeScript("arguments[0].dispatchEvent(new Event('change', { bubbles: true }))", element);
 
-		System.out.println("✅ Value set using JS for element: " + locator.toString());
+		System.out.println("Value set using JS for element: " + locator.toString());
 	}
 
 	public static void setValueUsingJS(WebElement element, String value) {
@@ -174,7 +182,7 @@ public class HelperClass {
 		((JavascriptExecutor) driver)
 				.executeScript("arguments[0].dispatchEvent(new Event('change', { bubbles: true }))", element);
 
-		System.out.println("✅ Value set using JS for element: " + element.toString());
+		System.out.println("Value set using JS for element: " + element.toString());
 	}
 
 	public static boolean isButtonEnabled(By locator) {
@@ -397,16 +405,16 @@ public class HelperClass {
 
 			List<WebElement> tableRows = driver.findElements(By.xpath("//table//tbody/tr"));
 			if (tableRows.isEmpty()) {
-				System.out.println("❌ No data found for filter: " + optionText);
+				System.out.println("No data found for filter: " + optionText);
 			} else {
-				System.out.println("✅ Found " + tableRows.size() + " rows for filter: " + optionText);
+				System.out.println("Found " + tableRows.size() + " rows for filter: " + optionText);
 			}
 
 			try {
 				WebElement firstRowText = tableRows.get(0).findElement(By.xpath("./td[1]"));
 				System.out.println("Sample result: " + firstRowText.getText());
 			} catch (Exception e) {
-				System.out.println("⚠️ Could not read row data for filter: " + optionText);
+				System.out.println("Could not read row data for filter: " + optionText);
 			}
 		}
 	}
@@ -463,7 +471,7 @@ public class HelperClass {
 			WebElement element = getDriver().findElement(locator);
 			return element.getText().trim();
 		} catch (Exception e) {
-			System.err.println("❌ Unable to get text from: " + locator + " - " + e.getMessage());
+			System.err.println("Unable to get text from: " + locator + " - " + e.getMessage());
 			return "";
 		}
 	}
@@ -600,7 +608,7 @@ public class HelperClass {
 	        return false;
 	    }
 	}
-//Loader
+
 	
 	public static void waitForLoaderToDisappear(By loaderLocator) {
 	    WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));

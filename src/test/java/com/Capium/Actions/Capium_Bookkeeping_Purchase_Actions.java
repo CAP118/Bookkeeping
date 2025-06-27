@@ -50,12 +50,18 @@ public class Capium_Bookkeeping_Purchase_Actions {
 	public static By PurchaseLocator = By.xpath("//span[normalize-space()='Purchase']");
 	public static By PurchaseDashboard = By.xpath("//a[@href='/bookkeeping/purchases/default.aspx']");
 
+	//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
 	public void click_purchase_btn() {
-		purchase_L.Purchase_btn.click();
+	    wait.until(ExpectedConditions.visibilityOf(purchase_L.Purchase_btn));
+	    wait.until(ExpectedConditions.elementToBeClickable(purchase_L.Purchase_btn));
+	    purchase_L.Purchase_btn.click();
 	}
 
 	public void click_purchase_dashboard() {
-		purchase_L.Purchase_dashboard.click();
+	    wait.until(ExpectedConditions.visibilityOf(purchase_L.Purchase_dashboard));
+	    wait.until(ExpectedConditions.elementToBeClickable(purchase_L.Purchase_dashboard));
+	    purchase_L.Purchase_dashboard.click();
 	}
 
 	public void openPurchaseDashboard() {
@@ -114,7 +120,7 @@ public class Capium_Bookkeeping_Purchase_Actions {
 		String supplierName = "o_" + supplierCounter++; // e.g., o_1, o_2, ...
 		Thread.sleep(3000);
 		purchase_L.enter_Suplier_name.sendKeys(supplierName);
-		System.out.println("✅ Supplier created: " + supplierName);
+		System.out.println("Supplier created: " + supplierName);
 	}
 
 	public void click_suplier_savebtn() {
@@ -172,7 +178,7 @@ public class Capium_Bookkeeping_Purchase_Actions {
 
 		Runtime.getRuntime().exec(path);
 		Thread.sleep(3000);
-		System.out.println("✅ File upload triggered for: " + path);
+		System.out.println("File upload triggered for: " + path);
 	}
 
 	public void SaveandClose() {
@@ -195,7 +201,7 @@ public class Capium_Bookkeeping_Purchase_Actions {
 		Thread.sleep(2000);
 
 		Runtime.getRuntime().exec(Path1);
-		System.out.println("✅ File upload triggered for: " + Path1);
+		System.out.println("File upload triggered for: " + Path1);
 	}
 
 	public void ClickOnImportAfterUpload() throws InterruptedException {
@@ -247,16 +253,25 @@ public class Capium_Bookkeeping_Purchase_Actions {
 	}
 
 	public void SelectPurchase() throws InterruptedException {
-		purchase_L=PageFactory.initElements(driver, Capium_Bookkeeping_Purchase_Locators.class);
-		WebDriverWait wait = HelperClass.getWait();
-		wait.until(ExpectedConditions.elementToBeClickable(purchase_L.OpenPurchasebtn));
-		purchase_L.OpenPurchasebtn.click();
-		Thread.sleep(3000);
-		Hooks.captureScreenshotBase64(HelperClass.getDriver(), Hooks.getScenarioTest(), "purchase invoice");
-		wait.until(ExpectedConditions.elementToBeClickable(purchase_L.ClosePurchasepopup));
-		purchase_L.ClosePurchasepopup.click();
+	    purchase_L = PageFactory.initElements(driver, Capium_Bookkeeping_Purchase_Locators.class);
 
+	    WebDriverWait wait = HelperClass.getWait();
+
+	    By openPurchaseBtnLocator = By.xpath("//tbody[@role='alert']/tr[1]/td[2]/button");
+	    wait.until(ExpectedConditions.presenceOfElementLocated(openPurchaseBtnLocator));
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(openPurchaseBtnLocator));
+	    wait.until(ExpectedConditions.elementToBeClickable(openPurchaseBtnLocator));
+	    HelperClass.ClickUsingJS(driver, openPurchaseBtnLocator);
+	    Thread.sleep(3000);
+	    Hooks.captureScreenshotBase64(HelperClass.getDriver(), Hooks.getScenarioTest(), "purchase invoice");
+	    Thread.sleep(2000);
+	    By closePopupLocator = By.xpath("//button[text()='×']");
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(closePopupLocator));
+	    wait.until(ExpectedConditions.elementToBeClickable(closePopupLocator));
+	    HelperClass.ClickUsingJS(driver, closePopupLocator);
+	    
 	}
+
 
 	public void AddSupplier() throws IOException, InterruptedException {
 
@@ -437,7 +452,8 @@ public class Capium_Bookkeeping_Purchase_Actions {
 				}
 			}
 
-			WebDriverWait wait = new WebDriverWait(HelperClass.getDriver(), Duration.ofSeconds(10));
+			WebDriverWait wait = new WebDriverWait(HelperClass.getDriver(), Duration.ofSeconds(15));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='DivFilter']")));
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='DivFilter']")));
 
 			HelperClass.getDriver().navigate().refresh();
@@ -492,8 +508,10 @@ public class Capium_Bookkeeping_Purchase_Actions {
 	}
 
 	public void ClickOnPurchaseTypeDropdown() {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		purchase_L = PageFactory.initElements(driver, Capium_Bookkeeping_Purchase_Locators.class);
 
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+	    
 	    try {
 	        WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(purchase_L.PurchaseDropdown));
 

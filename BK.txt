@@ -1,0 +1,10 @@
+@echo off
+echo ================================
+echo Running Maven Cucumber Tests via Jenkins...
+echo ================================
+
+cd /d "D:\Core Modules\Capium_BK_3.0"
+
+:: Clean and run tests
+mvn clean test -DskipTests=false
+

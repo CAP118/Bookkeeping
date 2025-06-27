@@ -15,8 +15,8 @@ import com.Capium.Utilies.HelperClass;
 
 public class Capium_Bookkeeping_FixedAssets_Actions {
 
-	Capium_Bookkeeping_FixedAssets_Locators FixedAssestLocators = null;
-	 
+Capium_Bookkeeping_FixedAssets_Locators FixedAssestLocators = null;
+	
 	public Capium_Bookkeeping_FixedAssets_Actions() {
 		this.FixedAssestLocators = new Capium_Bookkeeping_FixedAssets_Locators();
 		PageFactory.initElements(HelperClass.getDriver(), FixedAssestLocators);
@@ -282,9 +282,9 @@ public class Capium_Bookkeeping_FixedAssets_Actions {
 		HelperClass.ClickUsingJS(HelperClass.getDriver(), By.xpath("//button[normalize-space()='Ok']"));
 //		String actualtext = HelperClass.getTitile(By.xpath("//div[@title='Other Intangible - Additions Cost']"));
 //		String expected = "Other Intangible - Additions Cost";
-// 
+//
 //		if (actualtext == expected) {
-// 
+//
 //			System.out.println("Verified");
 //		} else {
 //			System.out.println("Not Matched");
@@ -293,15 +293,15 @@ public class Capium_Bookkeeping_FixedAssets_Actions {
  
 	public void Clickoneditandexplaininactiondropdownforleased() throws InterruptedException {
 		String supplierName = "Supplierforleased";
-
+ 
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()='Asset']")));
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space()='Asset']")));
 		HelperClass.ClickUsingJS(HelperClass.getDriver(), By.xpath("//a[normalize-space()='Asset']"));
-		Thread.sleep(2000); 
-
-
+		Thread.sleep(2000);
+ 
+ 
 		Select supplierDropdown = new Select(HelperClass.getDriver().findElement(By.id("cboCustomer")));
-
+ 
 		boolean supplierExists = false;
 		for (WebElement option : supplierDropdown.getOptions()) {
 		    if (option.getText().trim().equalsIgnoreCase(supplierName)) {
@@ -309,7 +309,7 @@ public class Capium_Bookkeeping_FixedAssets_Actions {
 		        break;
 		    }
 		}
-
+ 
 		if (supplierExists) {
 		   
 		    supplierDropdown.selectByVisibleText(supplierName);
@@ -318,17 +318,17 @@ public class Capium_Bookkeeping_FixedAssets_Actions {
 		    // Create new supplier
 		    HelperClass.ClickUsingJS(HelperClass.getDriver(), By.xpath("//button[@class='btn btn-default']"));
 		    Thread.sleep(1000); // Wait for modal/input to appear
-
+ 
 		    HelperClass.sendKeys(By.xpath("//input[@id='txtCName']"), supplierName);
 		    HelperClass.ClickUsingJS(HelperClass.getDriver(), By.xpath("(//i[@class='fa fa-save'])[3]"));
 		    Thread.sleep(2000); // Wait for save to complete and dropdown to refresh
-
+ 
 		    // Re-check the dropdown to select newly created supplier
 		    supplierDropdown = new Select(HelperClass.getDriver().findElement(By.id("cboCustomer")));
 		    supplierDropdown.selectByVisibleText(supplierName);
 		    System.out.println("New supplier created and selected: " + supplierName);
 		}
-
+ 
 		FixedAssestLocators.enterDescription.sendKeys("des3");
 		HelperClass.setValueUsingJS(By.xpath("(//input[@type='text'])[5]"), "1000");
 		HelperClass.sendKeys(By.xpath("(//input[@type='text'])[7]"), "4130");

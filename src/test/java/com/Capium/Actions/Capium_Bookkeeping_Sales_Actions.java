@@ -523,12 +523,12 @@ public class Capium_Bookkeeping_Sales_Actions {
 				WebElement allocateLaterButton = wait
 						.until(ExpectedConditions.elementToBeClickable(allocateLaterBtnBy));
 				HelperClass.ClickUsingJS(driver, allocateLaterButton);
-				System.out.println("✅ Allocate Later button clicked for Credit Note.");
+				System.out.println("Allocate Later button clicked for Credit Note.");
 			} catch (TimeoutException e) {
-				System.out.println("⚠️ Allocate Later button not found after Save and Close.");
+				System.out.println("Allocate Later button not found after Save and Close.");
 			}
 		} else {
-			System.out.println("✅ Normal Invoice: No Allocate Later button expected.");
+			System.out.println("Normal Invoice: No Allocate Later button expected.");
 		}
 	}
 
