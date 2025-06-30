@@ -91,47 +91,47 @@ public class Capium_Login_Actions {
 
 	}
 
-//	public void navigateToCapium365Module() {
-//	    WebDriverWait wait = new WebDriverWait(HelperClass.getDriver(), Duration.ofSeconds(3));
-//
-//	    try {
-//	        if (isElementVisible(loginLocators.Capiuum365_Module, wait)) {
-//	            loginLocators.Capiuum365_Module.click();
-//	            System.out.println("Navigated to Capium365 module from Homepage.");
-//	            return;
-//	        }
-//
-//	        if (isElementVisible(loginLocators.CiconFivepoint_o, wait)) {
-//	            loginLocators.CiconFivepoint_o.click();
-//	            Thread.sleep(2000);
-//	            wait.until(ExpectedConditions.visibilityOf(loginLocators.InsideCicon5_0_365Module));
-//
-//	            if (isElementVisible(loginLocators.InsideCicon5_0_365Module, wait)) {
-//	                loginLocators.InsideCicon5_0_365Module.click();
-//	                System.out.println("Navigated to Capium365 module from inside 5.0 module.");
-//	                return;
-//	            }
-//	        }
-//
-//	        if (isElementVisible(loginLocators.C_icon_inside_modules, wait)) {
-//	            loginLocators.C_icon_inside_modules.click();
-//	            Thread.sleep(2000);
-//	            wait.until(ExpectedConditions.visibilityOf(loginLocators.insideCicon3_0_365Module));
-//
-//	            if (isElementVisible(loginLocators.insideCicon3_0_365Module, wait)) {
-//	                loginLocators.insideCicon3_0_365Module.click();
-//	                System.out.println("Navigated to Capium365 module from inside 3.0 module.");
-//	                return;
-//	            }
-//	        }
-//
-//	        System.out.println("Capium365 module could not be found in any known location.");
-//
-//	    } catch (Exception e) {
-//	        System.out.println("Error while navigating to Capium365 module.");
-//	        e.printStackTrace();
-//	    }
-//	}
+	public void navigateToCapium365Module() {
+	    WebDriverWait wait = new WebDriverWait(HelperClass.getDriver(), Duration.ofSeconds(3));
+
+	    try {
+	        if (isElementVisible(loginLocators.Capiuum365_Module, wait)) {
+	            loginLocators.Capiuum365_Module.click();
+	            System.out.println("Navigated to Capium365 module from Homepage.");
+	            return;
+	        }
+
+	        if (isElementVisible(loginLocators.CiconFivepoint_o, wait)) {
+	            loginLocators.CiconFivepoint_o.click();
+	            Thread.sleep(2000);
+	            wait.until(ExpectedConditions.visibilityOf(loginLocators.InsideCicon5_0_365Module));
+
+	            if (isElementVisible(loginLocators.InsideCicon5_0_365Module, wait)) {
+	                loginLocators.InsideCicon5_0_365Module.click();
+	                System.out.println("Navigated to Capium365 module from inside 5.0 module.");
+	                return;
+	            }
+	        }
+
+	        if (isElementVisible(loginLocators.C_icon_inside_modules, wait)) {
+	            loginLocators.C_icon_inside_modules.click();
+	            Thread.sleep(2000);
+	            wait.until(ExpectedConditions.visibilityOf(loginLocators.insideCicon3_0_365Module));
+
+	            if (isElementVisible(loginLocators.insideCicon3_0_365Module, wait)) {
+	                loginLocators.insideCicon3_0_365Module.click();
+	                System.out.println("Navigated to Capium365 module from inside 3.0 module.");
+	                return;
+	            }
+	        }
+
+	        System.out.println("Capium365 module could not be found in any known location.");
+
+	    } catch (Exception e) {
+	        System.out.println("Error while navigating to Capium365 module.");
+	        e.printStackTrace();
+	    }
+	}
 
 
 //	public void Logout() {

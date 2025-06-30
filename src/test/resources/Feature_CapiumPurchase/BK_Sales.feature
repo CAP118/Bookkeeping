@@ -2,7 +2,7 @@
 Feature: BookkeepingModule-Sales
 
   Background: User login
- Given Launch the browser
+  Given Launch the browser
   And User need to enter the Application Url
   When User Enter username and Password
   Then User Click on login button

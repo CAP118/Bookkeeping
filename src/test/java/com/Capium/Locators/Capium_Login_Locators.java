@@ -21,7 +21,7 @@ public class Capium_Login_Locators {
 	@FindBy(xpath = "//h1")
 	@CacheLookup
 	public WebElement Headingtag;
-
+   // C module
 	@FindBy(xpath = "//a[@title='Modules']")
 	@CacheLookup
 	public WebElement C_icon_inside_modules;

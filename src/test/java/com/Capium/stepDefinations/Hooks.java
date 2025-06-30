@@ -42,24 +42,29 @@ public class Hooks {
 
 	@AfterStep
 	public void afterStep(Scenario scenario) {
-		WebDriver driver = HelperClass.getDriver();
-		String stepName = StepTracker.getCurrentStep();
+	    if (!scenario.isFailed()) {
+	        return;
+	    }
 
-		if (stepName == null || stepName.isEmpty()) {
-			stepName = "Unnamed Step";
-		}
+	    WebDriver driver = HelperClass.getDriver();
+	    String stepName = StepTracker.getCurrentStep();
 
-		String base64Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+	    if (stepName == null || stepName.isEmpty()) {
+	        stepName = "Unnamed Step";
+	    }
 
-		if (scenario.isFailed()) {
-			scenario.attach(Base64.getDecoder().decode(base64Screenshot), "image/png", stepName);
-			Hooks.scenarioTest.log(Status.FAIL, stepName,
-					MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
-		} else {
-			Hooks.scenarioTest.log(Status.PASS, stepName,
-					MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
-		}
+	    try {
+	        String base64Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+	        scenario.attach(Base64.getDecoder().decode(base64Screenshot), "image/png", stepName);
+	        Hooks.scenarioTest.log(Status.FAIL, stepName,
+	                MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
+
+	        Log.info("Captured screenshot for failed step: " + stepName);
+	    } catch (Exception e) {
+	        Log.error("Failed to capture screenshot on failure: " + e.getMessage());
+	    }
 	}
+
 
 	@After
 	public void afterScenario(Scenario scenario) {
@@ -74,73 +79,6 @@ public class Hooks {
 				scenarioTest.log(Status.PASS, "Scenario Passed.");
 				Log.info("Scenario Passed.");
 			}
-
-//			By powerOffIcon = By.xpath("//i[@class='icon fa fa-power-off']");
-//			By profileIcon = By.xpath("//div[@class='profile-logo']//label");
-//			By logoutLink = By.xpath("//a[normalize-space()='Logout']");
-//			By loginPageIdentifier = By.xpath("//div[normalize-space()='Sign In']");
-//			By fivePointProfileIcon = By.xpath("(//a[@aria-haspopup='menu'])[3]");
-//			By fivePointSignOut = By.xpath("//a[normalize-space()='Sign Out']");
-//            // 3.0 logout
-//			if (HelperClass.isElementPresent(powerOffIcon)) {
-//				WebElement powerOff = wait.until(ExpectedConditions.elementToBeClickable(powerOffIcon));
-//				HelperClass.scrollIntoView(powerOff);
-//				try {
-//					powerOff.click();
-//				} catch (ElementClickInterceptedException e) {
-//					((JavascriptExecutor) driver).executeScript("arguments[0].click();", powerOff);
-//				}
-//				Log.info("Clicked power-off icon for logout.");
-//			}
-//             // home page logout
-//			else if (HelperClass.isElementPresent(profileIcon)) {
-//				WebElement profile = wait.until(ExpectedConditions.elementToBeClickable(profileIcon));
-//				HelperClass.scrollIntoView(profile);
-//				try {
-//					profile.click();
-//				} catch (ElementClickInterceptedException e) {
-//					((JavascriptExecutor) driver).executeScript("arguments[0].click();", profile);
-//				}
-//				Log.info("Clicked profile icon.");
-//
-//				if (HelperClass.isElementPresent(logoutLink)) {
-//					WebElement logout = wait.until(ExpectedConditions.elementToBeClickable(logoutLink));
-//					HelperClass.scrollIntoView(logout);
-//					try {
-//						logout.click();
-//					} catch (ElementClickInterceptedException e) {
-//						((JavascriptExecutor) driver).executeScript("arguments[0].click();", logout);
-//					}
-//					Log.info("Clicked logout link.");
-//				}
-//			}
-//			// 5.0 Logout
-//			else if (HelperClass.isElementPresent(fivePointProfileIcon)) {
-//				WebElement fivePointIcon = wait.until(ExpectedConditions.elementToBeClickable(fivePointProfileIcon));
-//				HelperClass.scrollIntoView(fivePointIcon);
-//				try {
-//					fivePointIcon.click();
-//				} catch (ElementClickInterceptedException e) {
-//					((JavascriptExecutor) driver).executeScript("arguments[0].click();", fivePointIcon);
-//				}
-//				Log.info("Clicked 5.0 Profile Icon.");
-//
-//				if (HelperClass.isElementPresent(fivePointSignOut)) {
-//					WebElement fiveSignOut = wait.until(ExpectedConditions.elementToBeClickable(fivePointSignOut));
-//					HelperClass.scrollIntoView(fiveSignOut);
-//					try {
-//						fiveSignOut.click();
-//					} catch (ElementClickInterceptedException e) {
-//						((JavascriptExecutor) driver).executeScript("arguments[0].click();", fiveSignOut);
-//					}
-//					Log.info("Clicked 5.0 Sign Out.");
-//				}
-//			}
-//
-//			wait.until(ExpectedConditions.visibilityOfElementLocated(loginPageIdentifier));
-//			Log.info("Logout successful. Redirected to login page.");
-//
-//		} 
 			Capium_Login_Actions loginPage = PageFactory.initElements(driver, Capium_Login_Actions.class);
 	        loginPage.Logout(); 
 
