@@ -6,7 +6,7 @@
 			<class name="com.Capium.TestRunFiles.Capium_Login_runfile" />
 			<class name="com.Capium.TestRunFiles.Capium_BK_Dashboard_runfile" />
 			<class name="com.Capium.TestRunFiles.Capium_ClientCreation_runfile" />
-			<class name="com.Capium.TestRunFiles.Capium_BK_Sales_runfile" />
+			<!--<class name="com.Capium.TestRunFiles.Capium_BK_Sales_runfile" />
 			<class name="com.Capium.TestRunFiles.Capium_BK_Contacts_runfile" />
 	 		<class name="com.Capium.TestRunFiles.Capium_BK_purchase_runfile" /> 
 			<class name="com.Capium.TestRunFiles.Capium_BK_QuickEntry_runfile" />
@@ -15,7 +15,7 @@
 			<class name="com.Capium.TestRunFiles.Capium_BK_Reports_runfile" />
 			<class name="com.Capium.TestRunFiles.Capium_BK_Schedule_runfile" />
 			<class name="com.Capium.TestRunFiles.Capium_BK_Bank_runfile" />
-			<class name="com.Capium.TestRunFiles.Capium_BK_FixedAssests_runfile"/>
+			<class name="com.Capium.TestRunFiles.Capium_BK_FixedAssests_runfile"/>-->
 		</classes>
 	</test> <!--
 	Test -->

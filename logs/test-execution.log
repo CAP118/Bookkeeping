@@ -2813,3 +2813,109 @@ Session ID: b0f33c37446318b9cbaa930374b85e6b
 2025-06-30 17:09:13 [main] INFO  com.Capium.Utilies.Log - Validate Scroll bar successfully.
 2025-06-30 17:09:13 [main] ERROR com.Capium.Utilies.Log - Logout failed: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, String)" because "com.Capium.stepDefinations.Hooks.scenarioTest" is null
 2025-06-30 17:09:14 [main] INFO  com.Capium.Utilies.Log - Browser closed.
+2025-07-01 15:51:27 [main] INFO  com.Capium.Utilies.Log - Driver setup successfully
+2025-07-01 15:51:27 [main] INFO  com.Capium.Utilies.Log - Scenario:User login
+2025-07-01 15:51:27 [main] INFO  com.Capium.Utilies.Log - Launch browser successfully.
+2025-07-01 15:51:29 [main] INFO  com.Capium.Utilies.Log - LRL entered successfully.
+2025-07-01 15:51:29 [main] INFO  com.Capium.Utilies.Log - Username and Password entered successfully.
+2025-07-01 15:51:34 [main] INFO  com.Capium.Utilies.Log - User Click on login button successfully.
+2025-07-01 15:51:46 [main] INFO  com.Capium.Utilies.Log - redirect to Bookkeeping module successfully.
+2025-07-01 15:51:46 [main] INFO  com.Capium.Utilies.Log - Scenario Passed.
+2025-07-01 15:51:56 [main] ERROR com.Capium.Utilies.Log - Logout failed: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[@aria-haspopup='menu'])[3]"}
+  (Session info: chrome=137.0.7151.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [48e849efe33c1c4e809d351abf4cb8b4, findElement {using=xpath, value=(//a[@aria-haspopup='menu'])[3]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55294}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55294/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 48e849efe33c1c4e809d351abf4cb8b4
+2025-07-01 15:52:06 [main] ERROR com.Capium.Utilies.Log - Logout failed: Expected condition failed: waiting for visibility of element located by By.xpath: //div[normalize-space()='Sign In'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55294}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55294/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 48e849efe33c1c4e809d351abf4cb8b4
+2025-07-01 15:52:07 [main] INFO  com.Capium.Utilies.Log - Browser closed.
+2025-07-01 15:52:08 [main] INFO  com.Capium.Utilies.Log - Driver setup successfully
+2025-07-01 15:52:08 [main] INFO  com.Capium.Utilies.Log - Scenario:Dashboard functionality
+2025-07-01 15:52:08 [main] INFO  com.Capium.Utilies.Log - Launch browser successfully.
+2025-07-01 15:52:09 [main] INFO  com.Capium.Utilies.Log - LRL entered successfully.
+2025-07-01 15:52:10 [main] INFO  com.Capium.Utilies.Log - Username and Password entered successfully.
+2025-07-01 15:52:15 [main] INFO  com.Capium.Utilies.Log - User Click on login button successfully.
+2025-07-01 15:52:27 [main] INFO  com.Capium.Utilies.Log - redirect to Bookkeeping module successfully.
+2025-07-01 15:52:29 [main] INFO  com.Capium.Utilies.Log - Validate RefreshButton in VAT Summery which is at Right Side successfully.
+2025-07-01 15:52:35 [main] INFO  com.Capium.Utilies.Log - Validate Returns in previous month which is in VAT Summery successfully.
+2025-07-01 15:52:37 [main] INFO  com.Capium.Utilies.Log - Validate Minimise in VAT Summery successfully.
+2025-07-01 15:52:41 [main] INFO  com.Capium.Utilies.Log - Validate Add Client successfully.
+2025-07-01 15:52:43 [main] INFO  com.Capium.Utilies.Log - Validate Add Client Page successfully.
+2025-07-01 15:52:43 [main] INFO  com.Capium.Utilies.Log - Validate All Clients successfully.
+2025-07-01 15:52:56 [main] INFO  com.Capium.Utilies.Log - Validate Client Type successfully.
+2025-07-01 15:52:56 [main] INFO  com.Capium.Utilies.Log - Validate Text search successfully.
+2025-07-01 15:52:56 [main] INFO  com.Capium.Utilies.Log - Validate Vat client successfully.
+2025-07-01 15:53:02 [main] INFO  com.Capium.Utilies.Log - Validate Month in VAT Clients successfully.
+2025-07-01 15:53:13 [main] INFO  com.Capium.Utilies.Log - Validate VAT Status successfully.
+2025-07-01 15:53:19 [main] INFO  com.Capium.Utilies.Log - Validate Payment Status successfully.
+2025-07-01 15:53:19 [main] INFO  com.Capium.Utilies.Log - Validate Client List successfully.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Page 3 button was visible and clicked.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Clicked on 'Previous' button.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Clicked on 'Last' button.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Validate First and Previous button successfully.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Clicked on 'Next' button.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Validate Next button successfully.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Clicked on 'Last' button.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Validate Last button successfully.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Validate Scroll bar successfully.
+2025-07-01 15:53:21 [main] INFO  com.Capium.Utilies.Log - Scenario Passed.
+2025-07-01 15:53:31 [main] ERROR com.Capium.Utilies.Log - Logout failed: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[@aria-haspopup='menu'])[3]"}
+  (Session info: chrome=137.0.7151.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3ebcfd26f0b1fde7c8f05e598735698e, findElement {using=xpath, value=(//a[@aria-haspopup='menu'])[3]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55334}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55334/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ebcfd26f0b1fde7c8f05e598735698e
+2025-07-01 15:53:41 [main] ERROR com.Capium.Utilies.Log - Logout failed: Expected condition failed: waiting for visibility of element located by By.xpath: //div[normalize-space()='Sign In'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55334}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55334/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ebcfd26f0b1fde7c8f05e598735698e
+2025-07-01 15:53:42 [main] INFO  com.Capium.Utilies.Log - Browser closed.
+2025-07-01 15:53:43 [main] INFO  com.Capium.Utilies.Log - Driver setup successfully
+2025-07-01 15:53:43 [main] INFO  com.Capium.Utilies.Log - Scenario:Client creation page
+2025-07-01 15:53:43 [main] INFO  com.Capium.Utilies.Log - Launch browser successfully.
+2025-07-01 15:53:44 [main] INFO  com.Capium.Utilies.Log - LRL entered successfully.
+2025-07-01 15:53:44 [main] INFO  com.Capium.Utilies.Log - Username and Password entered successfully.
+2025-07-01 15:53:50 [main] INFO  com.Capium.Utilies.Log - User Click on login button successfully.
+2025-07-01 15:54:01 [main] INFO  com.Capium.Utilies.Log - redirect to Bookkeeping module successfully.
+2025-07-01 15:54:02 [main] INFO  com.Capium.Utilies.Log - Total row count: 1
+2025-07-01 15:54:09 [main] INFO  com.Capium.Utilies.Log - Successfully client Created in Bookkeeping
+2025-07-01 15:54:09 [main] INFO  com.Capium.Utilies.Log - Successfully captured screenshot: Client Created Successfully
+2025-07-01 15:54:09 [main] INFO  com.Capium.Utilies.Log - Starting verification of clients...
+2025-07-01 15:54:12 [main] INFO  com.Capium.Utilies.Log - Appearing client name: '179921'
+2025-07-01 15:54:12 [main] INFO  com.Capium.Utilies.Log - Mismatch. Expected: 'Test Client', Found: '179921'. Retrying...
+2025-07-01 15:54:13 [main] INFO  com.Capium.Utilies.Log - Appearing client name: '179921'
+2025-07-01 15:54:13 [main] INFO  com.Capium.Utilies.Log - Mismatch. Expected: 'Test Client', Found: '179921'. Retrying...
+2025-07-01 15:54:14 [main] INFO  com.Capium.Utilies.Log - Appearing client name: 'Test Client'
+2025-07-01 15:54:16 [main] INFO  com.Capium.Utilies.Log - Client 'Test Client' clicked successfully.
+2025-07-01 15:54:17 [main] INFO  com.Capium.Utilies.Log - Successfully Verified the client created or not
+2025-07-01 15:54:17 [main] INFO  com.Capium.Utilies.Log - Successfully captured screenshot: Verifed client created or not
+2025-07-01 15:54:19 [main] INFO  com.Capium.Utilies.Log - Scenario Passed.
+2025-07-01 15:54:29 [main] ERROR com.Capium.Utilies.Log - Logout failed: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[@aria-haspopup='menu'])[3]"}
+  (Session info: chrome=137.0.7151.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9215ea91969416fb83165933180ced54, findElement {using=xpath, value=(//a[@aria-haspopup='menu'])[3]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55424}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55424/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9215ea91969416fb83165933180ced54
+2025-07-01 15:54:39 [main] ERROR com.Capium.Utilies.Log - Logout failed: Expected condition failed: waiting for visibility of element located by By.xpath: //div[normalize-space()='Sign In'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.12'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.120, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55424}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55424/devtoo..., se:cdpVersion: 137.0.7151.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9215ea91969416fb83165933180ced54
+2025-07-01 15:54:39 [main] INFO  com.Capium.Utilies.Log - Browser closed.

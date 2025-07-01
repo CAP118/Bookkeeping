@@ -23,7 +23,7 @@ public class Hooks {
 
 	private static ExtentReports extent = ExtentService.getInstance();
 	private static ExtentTest scenarioTest;
-	
+
 	@BeforeAll
 	public static void setup() {
 		HelperClass.setUpDriver();
@@ -39,32 +39,30 @@ public class Hooks {
 		Log.info("Scenario:" + scenario.getName());
 	}
 
-
 	@AfterStep
 	public void afterStep(Scenario scenario) {
-	    if (!scenario.isFailed()) {
-	        return;
-	    }
+		if (!scenario.isFailed()) {
+			return;
+		}
 
-	    WebDriver driver = HelperClass.getDriver();
-	    String stepName = StepTracker.getCurrentStep();
+		WebDriver driver = HelperClass.getDriver();
+		String stepName = StepTracker.getCurrentStep();
 
-	    if (stepName == null || stepName.isEmpty()) {
-	        stepName = "Unnamed Step";
-	    }
+		if (stepName == null || stepName.isEmpty()) {
+			stepName = "Unnamed Step";
+		}
 
-	    try {
-	        String base64Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
-	        scenario.attach(Base64.getDecoder().decode(base64Screenshot), "image/png", stepName);
-	        Hooks.scenarioTest.log(Status.FAIL, stepName,
-	                MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
+		try {
+			String base64Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+			scenario.attach(Base64.getDecoder().decode(base64Screenshot), "image/png", stepName);
+			Hooks.scenarioTest.log(Status.FAIL, stepName,
+					MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
 
-	        Log.info("Captured screenshot for failed step: " + stepName);
-	    } catch (Exception e) {
-	        Log.error("Failed to capture screenshot on failure: " + e.getMessage());
-	    }
+			Log.info("Captured screenshot for failed step: " + stepName);
+		} catch (Exception e) {
+			Log.error("Failed to capture screenshot on failure: " + e.getMessage());
+		}
 	}
-
 
 	@After
 	public void afterScenario(Scenario scenario) {
@@ -80,13 +78,11 @@ public class Hooks {
 				Log.info("Scenario Passed.");
 			}
 			Capium_Login_Actions loginPage = PageFactory.initElements(driver, Capium_Login_Actions.class);
-	        loginPage.Logout(); 
+			loginPage.Logout();
 
-	        wait.until(ExpectedConditions.visibilityOfElementLocated(
-	            By.xpath("//div[normalize-space()='Sign In']")));
-	        Log.info("Successfully logged out and redirected to login page.");
-		}
-			catch (Exception e) {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[normalize-space()='Sign In']")));
+			Log.info("Successfully logged out and redirected to login page.");
+		} catch (Exception e) {
 			Log.error("Logout failed: " + e.getMessage());
 			System.out.println("Logout failed: " + e.getMessage());
 		}
@@ -122,12 +118,9 @@ public class Hooks {
 		try {
 			TakesScreenshot ts = (TakesScreenshot) driver;
 			String base64Screenshot = ts.getScreenshotAs(OutputType.BASE64);
-
 			scenarioTest.log(Status.INFO, "Screenshot: " + message,
 					MediaEntityBuilder.createScreenCaptureFromBase64String(base64Screenshot).build());
-
 			Log.info("Successfully captured screenshot: " + message);
-
 		} catch (Exception e) {
 			Log.error("Failed to capture screenshot: " + message + " | Error: " + e.getMessage());
 		}
@@ -136,8 +129,6 @@ public class Hooks {
 	private String getStepNameFromStackTrace() {
 		for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
 			String methodName = element.getMethodName();
-
-			// Find your step definition package
 			if (element.getClassName().contains("com.Capium.stepDefinations")) {
 				return methodName.replace("_", " ");
 			}
@@ -149,11 +140,11 @@ public class Hooks {
 		try {
 			for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
 				if (element.getClassName().contains("StepDefinitions")) {
-					return element.getMethodName(); 
+					return element.getMethodName();
 				}
 			}
 		} catch (Exception e) {
-		
+
 		}
 		return null;
 	}
